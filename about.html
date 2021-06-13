@@ -1,0 +1,411 @@
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>auction Results</title>
+<base href="/">
+  <!-- Custom-Files -->
+  <link rel="stylesheet" href="css1/bootstrap.css">
+  <!-- Bootstrap-Core-CSS -->
+  <link rel="stylesheet" href="css1/style.css" type="text/css" media="all" />
+  <!-- Style-CSS -->
+  <link href="css1/font-awesome.min.css" rel="stylesheet">
+  <!-- Font-Awesome-Icons-CSS -->
+  <!-- //Custom-Files -->
+  <!-- Web-Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=devanagari,latin-ext"
+   rel="stylesheet">
+  <!-- //Web-Fonts -->
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Invest project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+</head>
+ <style type="text/css">
+     #profileImage {
+      /*padding-left: 10px;*/
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  /*background: #ff6666;*/
+ background: #FFFFFF;
+ text-transform: uppercase;
+  font-size: 49px;
+  color: #202428;
+  text-align: center;
+  /*line-height: 10px;*/
+  margin: -6px 0;
+* {
+  box-sizing: border-box;
+}
+</style>
+ <script>
+function chec()
+{//document.getElementById('contentout').style.display="block";
+
+            
+  if(sessionStorage.getItem("loggedsellerid")!=null && sessionStorage.getItem("loggedseller")!=null)
+{//document.getElementById("bannershow").style.display="none";
+  document.getElementById('logout').style.display="block";
+//document.getElementById("addproduct").style.display="block";
+// document.getElementById("addprod").style.display="block";
+
+document.getElementById('log').style.display="none";
+// document.getElementById("firstName").innerHTML=sessionStorage.getItem("loggedseller");
+//document.getElementById('contentout').style.display="none";
+  $(document).ready(function(){
+  var firstName = sessionStorage.getItem("loggedseller");
+  var intials = firstName.charAt(0);
+  var profileImage = $('#profileImage').text(intials);
+});
+
+if(sessionStorage.getItem("seller")=="1"){
+  //document.getElementById("bannershow").style.display="none";
+//document.getElementById('buyer').style.display="none";
+//document.getElementById('seller').style.display="block";
+
+}
+  else if(sessionStorage.getItem("buyer")=="1"){
+   // document.getElementById("bannershow").style.display="none";
+   //document.getElementById('buyer').style.display="block";
+//document.getElementById('seller').style.display="none";
+ 
+  }
+}
+else
+{//document.getElementById('addproduct').style.display="none";
+
+document.getElementById('log').style.display="block";
+document.getElementById('logout').style.display="none";
+document.getElementById("firstName").innerHTML="";
+document.getElementById("profileImage").style.display="none";
+//document.getElementById("bannershow").style.display="block";
+}
+}
+
+function logoutFunction()
+{//document.getElementById('addproduct').style.display="none";
+ sessionStorage.removeItem("loggedsellerid");
+  
+sessionStorage.removeItem("loggedseller");
+alert("logged out");
+document.getElementById('logout').style.display="none";
+ //document.getElementById('log').style.display="block";
+document.getElementById("firstName").innerHTML="";
+document.getElementById("profileImage").style.display="none";
+//document.getElementById('buyer').style.display="none";
+//document.getElementById('seller').style.display="none";
+//document.getElementById('contentout').style.display="block";
+if(sessionStorage.getItem("seller")=="1")
+  {sessionStorage.setItem("seller","0");}
+    else
+    {sessionStorage.setItem("buyer","0");
+sessionStorage.removeItem("account");}
+
+}
+
+
+        addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+    </script>
+  <body onload="chec()">
+   
+
+
+<header class="header">
+        <!-- Main Menu -->
+       <div class="main_menu">
+        <div class="container" style="height: 95px;">
+          <div class="row">
+            <div class="col">
+              <div class="main_menu_container d-flex flex-row align-items-center justify-content-start">
+                <div class="main_menu_content">
+                   <nav>
+              <label for="drop" class="toggle">Menu</label>
+              <input type="checkbox" id="drop" />
+              <ul class="menu">
+                 <!-- <div id="log" style="display: none;"> -->
+                <!-- <span > -->
+                <li id="log" style="display: none;">
+                  <label for="drop-2" class="toggle toogle-2">LOGIN <span class="fa fa-angle-down" aria-hidden="true"></span>
+                  </label>
+               
+                 
+                  <a href="#">LOGIN <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                  <input type="checkbox" id="drop-2" />
+                  <ul >
+                    <li><a href="indexs.html" class="drop-text">SELLER</a></li>
+                    <li><a href="indexb.html" class="drop-text">BUYER</a></li>
+                     </ul>
+                      </li>
+                      <!-- </span> -->
+                   <!-- </div> -->
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="about.html">METAMASK</a></li>
+                <!-- <li><a href="pricing.html">Pricing</a></li> -->
+                 <li><a href="contact.html">CONTACT US</a></li>
+                 <li><a href="#" onclick="showResult()"> RESULTS</a></li>
+                 <!-- <li><a href="#">whatever</a></li> -->
+                  <!-- First Tier Drop Down -->
+                   
+               
+                    
+  
+                
+                <!-- <span id="logout" style="display:none;"> -->
+                <li id="logout" style="display:none;"><a href="javascript:logoutFunction()">LOGOUT</a></li>
+                <!-- </span> -->
+              </ul>
+            </nav>             
+
+                </div>
+
+                <div class="main_menu_contact ml-auto">
+                
+                  <div class="main_menu_phone"><img src="images/phone-call.svg" alt=""><span>+825 25 800 800</span></div>
+                  <div class="main_menu_email"><img src="images/envelope.svg" alt=""><span>ebidding@gmail.com</span></div>
+                        <!-- </div> -->
+                </div>
+                      &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                  <p id="firstName"></p>
+                     <div id="profileImage" > </div>        
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!--  </div> -->
+
+    
+      
+    </header>
+
+
+    <!-- //header -->
+    <!-- about -->
+    
+	<div class="about-inner py-5">
+		<div class="container pb-xl-5 pb-lg-3">
+			<div class="row py-xl-4">
+				
+        <div class="col-lg-5 about-right-faq pr-5">
+          <img src="images/metamask.svg" alt="" class="img-fluid" />
+        </div>
+				<div class="col-lg-7 welcome-right text-center mt-lg-0 mt-5">
+					<h3 class="w3ls_pvt-title">A complete guide to using   <br><span>MetaMask</span></h3>
+            
+            <p>You MUST use Metamask browser extension. If you have done this already please go to Part 3. If you don’t have MetaMask, you MUST install it, otherwise it may result in a permanent loss of funds!
+
+          </p>
+	        </div>
+    </div>
+
+
+    <!-- accordions -->
+      <ul class="accordion css-accordion mt-5">
+        <li class="accordion-item">
+          <input class="accordion-item-input" type="checkbox" name="accordion" id="item1" />
+          <label for="item1" class="accordion-item-hd">Step 1. Install MetaMask on your browser <span
+             class="accordion-item-hd-cta">&#9650;</span></label>
+          <div class="accordion-item-bd">
+            <h6 class="accordion-textm">To create a new wallet with MetaMask you need to install the extension first.</h6>
+            <p> You can install Metamask for Chrome, Firefox, Brave and Opera browsers.
+<br>
+1.Open https://metamask.io or search for “Metamask extension” using your favorite search engine.
+
+In this tutorial we will be using Google Chrome as an example, but the workflow is the same for all browsers.
+<br>
+2. Click Chrome to install MetaMask as a Google Chrome extension.
+<br>
+3. Click Add to Chrome.
+<br>
+4. Click Add Extension.
+<br>
+That’s it! You have successfully installed MetaMask extension!
+</p>
+          </div>
+        </li>
+        <li class="accordion-item">
+          <input class="accordion-item-input" type="checkbox" name="accordion" id="item2" />
+          <label for="item2" class="accordion-item-hd">Step 2. Create an account. <span class="accordion-item-hd-cta">&#9650;</span></label>
+          <div class="accordion-item-bd">
+            <h6 class="accordion-textm">The next step is to create an account.</h6>
+            <p>
+1.Click on the MetaMask icon in the upper right corner to open the extension.
+<br>
+2.To install the latest version of MetaMask, click Try it now.
+<br>
+3.Click Continue.
+<br>
+4. You will be asked to create a new password. Create a strong password and click Create.
+<br>
+Don’t forget to store your password for safekeeping!
+<br>
+5. Proceed by clicking Next, then accept Terms of Use.
+<br>
+6. Click Reveal secret words.
+<br>
+7. You will see a 12 words seed phrase. Save seed words as a file or copy them to a safe place and click Next.
+
+
+
+</p>
+<br>
+<h6 class="accordion-textm">
+Security tips:
+Write this phrase on a piece of paper and store in a secure location. If you want even more security, write it down on multiple pieces of paper and store each in 2–3 different locations.
+Memorize this phrase.
+</h6>
+<p>
+  <br>
+  8. Verify your secret phrase by selecting the previously generated phrase. When done, click Confirm.
+</p>
+<br>
+<h6 class="accordion-textm">Congratulations! You have successfully created your MetaMask account. A new Ethereum wallet address was automatically generated for you!</h6>
+<br>
+<p>9. To continue, click View Account.
+
+</p>
+
+          </div>
+        </li>
+        <li class="accordion-item">
+          <input class="accordion-item-input" type="checkbox" name="accordion" id="item3" />
+          <label for="item3" class="accordion-item-hd">How can I find my wallet address in MetaMask?
+            <span class="accordion-item-hd-cta">&#9650;</span></label>
+          <div class="accordion-item-bd">
+            <h6 class="accordion-textm">To see your publica wallet address in MetaMask, follow these steps:</h6>
+            <p>1.Open MetaMask.
+              <br>
+2.Click on the account name to copy your wallet address to clipboard
+<br>
+3. If you want to see details, click the “hamburger menu” button.
+<br>
+4. Click Details.
+</p>
+          </div>
+        </li>
+        <li class="accordion-item">
+          <input class="accordion-item-input" type="checkbox" name="accordion" id="item4" />
+          <label for="item4" class="accordion-item-hd">How to see tokens I have on my wallet? <span class="accordion-item-hd-cta">&#9650;</span></label>
+          <div class="accordion-item-bd">
+            <h6 class="accordion-textm">By default, MetaMask is displaying only ETH you have on your wallet. If you have other tokens on your wallet (for example, Publica’s PBL tokens), you need too add a token to display this information.
+<br>
+To add a token:</h6>
+            <p>1.Open MetaMask.
+              <br>
+                1.Click Menu.
+                <br>
+                2.Click Add Token.
+                <br>
+                3.Select “Custom Token”.
+                <br>
+                4.Enter the smart contract address of a token you want to add.</p>
+                <br>
+                5.Enter the smart contract address of a token you want to add.
+                 <br> 
+                6. Click Next.
+                <br>
+                7. Click Add Tokens.
+                  <h6 class="accordion-textm">You can find a smart contract address for any token by opening Etherscan and searching for a desired token.</h6>
+          </div>
+        </li>
+          <li class="accordion-item">
+          <input class="accordion-item-input" type="checkbox" name="accordion" id="item5" />
+          <label for="item5" class="accordion-item-hd">How can I rename my account in MetaMask?<span
+             class="accordion-item-hd-cta">&#9650;</span></label>
+          <div class="accordion-item-bd">
+            <h6 class="accordion-textm">If you are using several accounts (several wallets) under one MetaMask installation, you can rename accounts for your convenience:
+
+</h6>
+            <p> You can install Metamask for Chrome, Firefox, Brave and Opera browsers.
+<br>
+1.Open MetaMask.
+<br>
+2. Click the “hamburger menu” button.
+<br>
+3. Click Details.
+<br>
+4. Click on the “pencil” icon next to your account’s name.
+<br>
+5.Enter the new name for your account (wallet) and save changes by clicking the “check” icon.
+</p>
+          </div>
+        </li>
+
+        <li class="accordion-item">
+          <input class="accordion-item-input" type="checkbox" name="accordion" id="item6" />
+          <label for="item6" class="accordion-item-hd">Where can I see my wallet’s private key?<span class="accordion-item-hd-cta">&#9650;</span></label>
+          <div class="accordion-item-bd">
+            <h6 class="accordion-textm">If you want to connect your wallet with another app or you simply need to know your wallet’s private key, follow these simple steps:
+
+</h6>
+            <p> You can install Metamask for Chrome, Firefox, Brave and Opera browsers.
+<br>
+1.Open MetaMask.
+<br>
+2. Click the “hamburger menu” button.
+<br>
+3. Click Details.
+<br>
+4. Click Export Private Key.
+<br>
+5.Type your password and click Confirm.
+</p>
+          </div>
+        </li>
+
+      </ul>
+      <!-- //accordions -->
+  </div>
+</div>
+					
+					<!-- <a href="about.html" class="btn button-style mt-sm-5 mt-4">Read More</a> -->
+				
+				<!-- <div class="col-lg-7 welcome-right text-center mt-lg-0 mt-5">
+					<img src="images/metamask.svg" alt="" class="img-fluid" />
+				</div> -->
+			
+	<!-- //about -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+ 
+<!-- <script src="js1/jquery-3.2.1.min.js"></script> -->
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js1/custom.js"></script>
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/apps.js"></script>
+<script src="js/app.js"></script>
+<script src="js/addprod.js"></script>
+<script src="js/result.js"></script>
+
+</body>
+</html>

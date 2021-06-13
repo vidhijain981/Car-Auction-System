@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+    * {
+  box-sizing: border-box;
+}
+
+input[type=text]{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=number]{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  height:30%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  height:40%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+/*styling for navigation bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+ body{
+        background-image:url(".jpg");
+        background-repeat: repeat;
+      }
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #000000;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #262626;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #000000}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+       
+    
+
+
+</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>auction Results</title>
+
+    <!-- Bootstrap -->
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body onload="chec()">
+    <script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+/*for dropdown this is validation do not remove*/
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+function chec()
+{document.getElementById('contentout').style.display="block";
+
+            
+  if(sessionStorage.getItem("loggedsellerid")!=null && sessionStorage.getItem("loggedseller")!=null)
+{document.getElementById('logout').style.display="block";
+document.getElementById("addproduct").style.display="block";
+// document.getElementById("addprod").style.display="block";
+
+document.getElementById('log').style.display="none";
+document.getElementById("name").innerHTML=sessionStorage.getItem("loggedseller");
+document.getElementById('contentout').style.display="none";
+
+if(sessionStorage.getItem("seller")=="1"){
+document.getElementById('buyer').style.display="none";
+document.getElementById('seller').style.display="block";
+
+}
+  else if(sessionStorage.getItem("buyer")=="1"){
+   document.getElementById('buyer').style.display="block";
+document.getElementById('seller').style.display="none";
+ 
+  }
+}
+else
+{document.getElementById('addproduct').style.display="none";
+
+document.getElementById('log').style.display="block";
+document.getElementById('logout').style.display="none";
+document.getElementById("name").innerHTML="";
+
+}
+}
+function logoutFunction()
+{document.getElementById('addproduct').style.display="none";
+ sessionStorage.removeItem("loggedsellerid");
+  
+sessionStorage.removeItem("loggedseller");
+alert("logged out");
+document.getElementById('logout').style.display="none";
+ document.getElementById('log').style.display="block";
+document.getElementById("name").innerHTML="";
+document.getElementById('buyer').style.display="none";
+document.getElementById('seller').style.display="none";
+document.getElementById('contentout').style.display="block";
+if(sessionStorage.getItem("seller")=="1")
+  {sessionStorage.setItem("seller","0");}
+    else
+    {sessionStorage.setItem("buyer","0");
+sessionStorage.removeItem("account");}
+
+}
+function addproduct()
+{document.getElementById("addprod").style.display="block";
+}
+</script>
+<div id="name"></div>
+<ul>
+<!--header-->
+<div class="w3-container" align="right">
+<div class="w3-bar w3-#333333 w3-padding">
+  <li><a href="homes.html">Home</a></li>
+   <div id="log" style="display: none;"> 
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Login</a>
+    <div class="dropdown-content">
+      <a href="indexs.html">Seller</a>
+      <a href="indexb.html">Buyer</a>
+  
+    </div></div>
+
+   
+  </li>
+  <li><a href="home.html">About us</a></li>
+  <li><a href="form.html">Contact us</a></li>
+  <li><a href="form.html">Help</a></li>
+  <li><a href="homes.html">Products</a></li>
+  <div id="logout" style="display: none;">
+<li><a href="javascript:logoutFunction()">logout</a></li>
+  </div>
+  </div>
+</div>
+</ul>
+ <div id="contentout"  style="display: block;">
+            <table class="table">
+                  <tbody id="sellerResultsout">
+              </tbody>
+            </table>
+            </div>
+ <div class="container" id="buyer" style="width: 650px; display: none;">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="content" >
+            <div id="content1" >
+            <h1>Countdown Clock</h1> 
+            <table class="table">
+                             <tbody id="sellerResults">
+
+ 
+
+              </tbody>
+            </table>
+            </div>
+            <hr/>
+            <div id="bdbutton" >
+            <form onSubmit="App.bidNow()">
+              <div class="form-group">
+                <label for="sellerSelect">Select seller</label>
+                <select class="form-control" id="sellerSelect">
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">bid</button>
+              <hr/>
+            </form>
+            <p id="accountAddress" class="text-center"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+            
+
+    <div class="container" style="width: 650px;display: none;" id="seller" >
+      <div class="row">
+        <div class="col-lg-12">
+          
+        
+
+            <table class="table">
+
+              <tbody id="sellerResultss">
+
+              </tbody>
+            </table>
+            
+          <div id="addproduct" style="display: none;">
+            <hr/>
+            
+              <button  class="btn btn-primary" onclick="addproduct()">add product</button>
+              <hr/>
+            
+            <p id="accountAddresss" class="text-center"></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="addprod" style="display: none;">
+      <div class="container">
+  <form method="POST" name="pnfrm">
+    <div class="row">
+      <div class="col-25">
+        <label for="product name">Product Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="pn"  placeholder="Product name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="product description">Product Description</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="pd" placeholder="Description..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="product description">Product Price</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="price" placeholder="price....">
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-25">
+        <label for="product description">Time you want your product to be displayed in hrs</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="timee" placeholder="time....">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="add">Add product</label>
+      </div>
+      <div class="col-75">
+        <input type="button" class="btn-add" value="submit" onclick="prod.addprod()"/>
+      </div>
+    </div>
+    
+  </form>
+ </div>
+    </div>
+
+  </body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/apps.js"></script>
+<script src="js/app.js"></script>
+<script src="js/addprod.js"></script>
+
+
+</html>

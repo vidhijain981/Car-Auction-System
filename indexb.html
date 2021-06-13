@@ -1,0 +1,209 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->   
+
+
+<!DOCTYPE HTML>
+<html lang="zxx" >
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="Triple Forms Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+     <script src='https://www.google.com/recaptcha/api.js'>
+     </script>
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!-- Meta tag Keywords -->
+
+  <!-- css files -->
+  <link rel="stylesheet" href="css/index.css" type="text/css" media="all" />
+  <!-- Style-CSS -->
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <!-- Font-Awesome-Icons-CSS -->
+  <!-- //css files -->
+
+    <!-- web-fonts -->
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext"
+   rel="stylesheet">
+  <!-- //web-fonts -->
+<head>
+  <script type="text/javascript">
+            function Captcha(){
+                     var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+                     var i;
+                     for (i=0;i<6;i++){
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                       var g = alpha[Math.floor(Math.random() * alpha.length)];
+                      }
+                    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+                    document.getElementById("mainCaptcha").value = code
+                  }     
+             </script>
+</head>
+
+<body onload="Captcha();">
+  <div class="main-bg">
+    <!-- title -->
+    <h1> E - bidding</h1>
+    <!-- //title -->
+    <div class="sub-main-w3">
+      <div class="image-style">
+
+      </div>
+      <!-- vertical tabs -->
+      <div class="vertical-tab">
+        <div id="section1" class="section-w3ls">
+          <input type="radio" name="sections" id="option1" checked>
+          <label for="option1" class="icon-left-w3pvt"><span class="fa fa-user-circle" aria-hidden="true"></span>Login</label>
+          <article>
+          <form onsubmit="/login" name="f1" method="get">
+              <!-- <h3 class="legend">Login Here</h3> -->
+              <div class="input">
+                <span class="fa fa-user-o" aria-hidden="true"></span>
+                <input type="text" name="nam  e" placeholder="Username" id="user" required >
+              </div>
+              <div class="input">
+                <span class="fa fa-key" aria-hidden="true"></span>
+                <input type="password" placeholder="Password" id="pass" required oncut="return false" oncopy="return false" onpaste="return false"/>
+              </div>
+
+            
+             
+               <div class="input">
+                <span class="fa fa-key" aria-hidden="true"></span>
+                <input type="text" placeholder="Enter the given number" id="mainCaptcha"  required />
+                <!-- oncopy="return false" oncut="return false" onchange="mainCaptcha.value=''"  onpaste="return false" -->
+              </div>
+                <input type="button" class="btn submit in" id="refresh" value="Refresh Captcha" onclick="Captcha();" />
+               <!-- <input type="text" id="txtInput"/>    -->
+             <div class="input">
+                <span class="fa fa-key" aria-hidden="true"></span>
+                <input  id="txtInput" type="text" placeholder="Captcha" id="pass" required oncut="return false" oncopy="return false" onpaste="return false"/>
+              </div>
+             <!-- <input  id="txtInput" type="password" placeholder="Captcha" id="pass" required > -->
+            <input  type="button" class="btn submit" value="login" id="Button1" onclick="logl.login()">
+            
+            </form>
+          </article>
+        </div>
+        <div id="section2" class="section-w3ls">
+          <input type="radio" name="sections" id="option2">
+          <label for="option2" class="icon-left-w3pvt"><span class="fa fa-pencil-square" aria-hidden="true"></span>Register</label>
+          <article>
+            <form action="#" method="post">
+              <h3 class="legend">Register Here</h3>
+              <div class="input">
+                <span class="fa fa-user-o" aria-hidden="true"></span>
+                <input type="text" placeholder="Username" name="name" id="userr" required />
+              </div>
+              <div class="input">
+                <span class="fa fa-key" aria-hidden="true"></span>
+                <input type="password" placeholder="Password" name="password" id="passr" required />
+              </div>
+              <!-- <div class="input"> -->
+               <!--  <span class="fa fa-key" aria-hidden="true"></span>
+                <input type="text" placeholder="Pass phrase" name="password" id="passphraser" required />
+                <label id="passphraser"></label>
+              </div> -->
+              <input  type="button"  class="btn submit" value="register" onclick="logl.login()">
+            </form>
+          </article>
+        </div>
+        <div id="section3" class="section-w3ls">
+          <input type="radio" name="sections" id="option3">
+          <label for="option3" class="icon-left-w3pvt"><span class="fa fa-lock" aria-hidden="true"></span>Forgot Password?</label>
+          <article>
+            <form >
+              <h3 class="legend last">Reset Password</h3>
+                 <p class="para-style">Enter your username below and seed phrase.</p> 
+                 <br>   
+               <div class="input">
+              
+                <span class="fa fa-user-o" aria-hidden="true"></span>
+                <input type="text" placeholder="Username" name="name" id="user2" required />
+              </div>        
+              <div class="input">
+                <span class="fa fa-key" aria-hidden="true"></span>
+                <input type="text" placeholder="Pass phrase" name="password" id="passphrase2" required />
+              </div>
+             
+              <input type="button"  class="btn submit last-btn" value="reset" onclick="logl.login()">
+            </form>
+          </article>
+        </div>
+      </div>
+      <!-- //vertical tabs -->  
+      <div class="clear"></div>
+    </div>
+    
+    <!-- copyright -->
+    
+    <!-- //copyright -->
+  </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/truffle-contract.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
+
+     <script src="bundle.js"></script>
+ 
+     
+
+<!-- 
+<script src="../node_modules/ethereumjs-wallet/hdkey.js"></script>
+  <script src="../node_modules/strip-hex-prefix/src/index.js"></script>
+      <script src="../node_modules/reload/index.js"></script>
+ <script src="../node_modules/sync-rpc/lib/index.js"></script>
+ <script src="../node_modules/sync-rpc"></script>
+  <script src="../node_modules/resolve/index.js"></script>  
+   <script src="../node_modules/bip39/index.js"></script>
+<script src="../node_modules/sync-node/sync-node.js"></script>
+<script src="../node_modules/password-hash/lib/password-hash.js"></script>
+<script src="../node_modules/nodemailer/lib/nodemailer.js"></script>
+<script src="js/logl.js"></script> 
+     
+  -->
+
+      <!-- <script src="js/async.js"></script>      -->
+ 
+
+  
+ 
+
+      </body>
+
+</html>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

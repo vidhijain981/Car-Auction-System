@@ -1,0 +1,16 @@
+<html>
+<body>
+</body>
+<script type="text/javascript">
+var data = new FormData();
+data.append("data" , "hello world");
+alert("hello");
+var xhr =  new XMLHttpRequest()
+alert(xhr);
+xhr.open( 'post', 'https://localhost:8080/save.php', true );
+xhr.send(data);
+alert(data);
+</script>
+
+</html>
+

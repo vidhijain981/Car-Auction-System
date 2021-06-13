@@ -1,0 +1,33 @@
+<html>
+	<head><!-- <meta http-equiv="Content-Security-Policy"
+	  content="default-src 'self' 
+	  https://ssl.gstatic.com 'unsafe-eval';
+	  style-src 'self' 'unsafe-inline';
+	  media-src *;
+	  
+	"> --></head>
+<body>
+<textarea name="message" placeholder="Write something" id="myText">I am trying to post data with AJAX!
+</textarea>
+<form method="post">
+<input type="submit" id="btn" value="Send it" onclick="fun()">
+</form>
+</body>
+
+
+<script type="text/javascript">
+function fun(){
+   var myText = $('#myText').val();
+   alert(myText);
+   console.log('Textarea: '+myText);
+   var url ='https://localhost:8080';
+   alert(url);
+   $.post(url, myText, function(data){
+   console.log('response from the callback function: '+ data); 
+   }).fail(function(jqXHR){
+     alert(jqXHR.status +' '+jqXHR.statusText+ ' $.post failed!');
+  });    
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</html>
